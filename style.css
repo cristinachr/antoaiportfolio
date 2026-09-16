@@ -226,7 +226,8 @@ nav .navbar .menu {
 .hero-brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-end; /* Alinea los hijos al extremo derecho de la caja */
+  width: fit-content;    /* Evita que se expanda al 100% de la pantalla */
   margin-top: auto;
   margin-bottom: auto;
   transform: translateY(-10px);
@@ -234,20 +235,22 @@ nav .navbar .menu {
 
 .brand-title {
   font-size: clamp(55px, 10vw, 120px);
-  font-weight: 300;
+  font-weight: 500;
   color: #111111;
   line-height: 0.9;
   letter-spacing: -2px;
   margin: 0;
   text-transform: lowercase;
+  text-align: right;
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.4vw, 33px);
-  font-weight: 100;
+  font-size: clamp(18px, 2.4vw, 28px);
+  font-weight: 400;
   color: #111111;
-  margin-top: 0px;
-  letter-spacing: 1px;
+  margin-top: 6px;
+  letter-spacing: -0.5px;
+  text-align: right;     /* Asegura la alineación visual hacia la derecha */
 }
 
 /* Bloque interactivo de scroll inferior */
