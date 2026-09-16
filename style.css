@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Tipografía principal */
+  /* Tipografía */
   --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
   /* Paleta cromática */
@@ -33,7 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar */
+/* Barra de desplazamiento */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -58,28 +58,28 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* H1: Nombre principal / Hero gigante */
+/* H1: Logotipo / Nombre central */
 h1 {
-  font-size: clamp(4rem, 11vw, 7.5rem);
-  font-weight: 700;
-  line-height: 1.05;
+  font-size: clamp(3.5rem, 9.5vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: lowercase;
 }
 
-/* H2: Subtítulo de portada o títulos principales de sección */
+/* H2: Subtítulo editorial / Títulos de sección */
 h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 600;
+  font-weight: 400;
 }
 
-/* H3: Subsecciones y encabezados medianos */
+/* H3: Subsecciones / Entradas medianas */
 h3 {
   font-size: clamp(1.3rem, 2.5vw, 1.75rem);
   font-weight: 600;
 }
 
-/* H4: Títulos de tarjetas de galería y modales */
+/* H4: Títulos de tarjetas de proyectos y modales */
 h4 {
   font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   font-weight: 500;
@@ -87,12 +87,12 @@ h4 {
 
 /* H5: Metadatos y subtítulos de tarjeta */
 h5 {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* H6: Etiquetas técnicas y tags */
+/* H6: Tags técnicos o etiquetas */
 h6 {
   font-size: 0.75rem;
   font-weight: 600;
@@ -117,22 +117,26 @@ small {
 }
 
 /* ==========================================================================
-   3. NAVEGACIÓN
+   3. NAVEGACIÓN (LIVIANA, TRANSLÚCIDA Y ESPACIADA)
    ========================================================================== */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 0;
+  padding: 18px 0;
   z-index: 998;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
 
 nav.sticky {
-  background: var(--color-brand);
   padding: 12px 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 }
 
 nav .navbar {
@@ -145,50 +149,55 @@ nav .navbar {
 }
 
 nav .navbar .logo a {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
-  color: var(--color-brand);
+  color: #111111;
   letter-spacing: -0.5px;
+  transition: color 0.25s ease;
 }
 
-nav.sticky .navbar .logo a {
-  color: #ffffff;
+nav .navbar .logo a:hover {
+  color: var(--color-brand);
 }
 
+/* Menú con mayor distancia entre palabras */
 nav .navbar .menu {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 20px;
+  gap: 48px; /* Separación amplia y editorial */
 }
 
 .navbar .menu a {
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--color-heading);
-  transition: color 0.3s ease;
+  color: #555555;
+  padding: 8px 18px;
+  border-radius: 30px;
+  letter-spacing: 0.06em;
+  transition: all 0.25s ease;
 }
 
 .navbar .menu a:hover {
-  color: var(--color-brand);
+  color: #111111;
 }
 
-nav.sticky .menu a {
-  color: #ffffff;
-}
-
-nav.sticky .menu a:hover {
-  color: #ffe6e4;
+/* Cápsula activa redondeada */
+.navbar .menu a.nav-active-pill {
+  color: #111111;
+  border: 1.5px solid #111111;
+  background: transparent;
+  font-weight: 600;
 }
 
 .navbar .media-icons a {
-  color: var(--color-brand);
-  font-size: 24px;
-  transition: color 0.3s ease;
+  color: #111111;
+  font-size: 20px;
+  transition: color 0.25s ease;
 }
 
-nav.sticky .media-icons a {
-  color: #ffffff;
+.navbar .media-icons a:hover {
+  color: var(--color-brand);
 }
 
 .menu-btn,
@@ -196,62 +205,36 @@ nav.sticky .media-icons a {
   display: none;
   font-size: 22px;
   cursor: pointer;
-  color: var(--color-brand);
-}
-
-nav.sticky .menu-btn {
-  color: #ffffff;
+  color: #111111;
 }
 
 /* ==========================================================================
-   4. HERO / PORTADA
+   4. HERO / PORTADA (PEEK DE GALERÍA)
    ========================================================================== */
 .home {
-  height: 100vh;
+  min-height: 88vh; /* Permite asomar las tarjetas inferiores */
   width: 100%;
-  background: #ffffff;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 240px 20px 20px 20px;
+  padding: 250px 20px 200x 20px;
 }
 
-.home .home-content {
-  width: 100%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.home h1 {
-  color: var(--color-heading);
-}
-
-.home h2 {
-  color: var(--color-brand);
-  margin-top: 14px;
-  letter-spacing: -0.5px;
-}
-
-
-
-/* Bloque central: yapoanto + Antonia Alvear alineado al final */
 .hero-brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end; /* Alinea 'Antonia' al borde derecho de la 'o' */
-  margin-top: auto;      /* Centrado vertical balanceado */
+  align-items: flex-end;
+  margin-top: auto;
   margin-bottom: auto;
   transform: translateY(-10px);
 }
 
 .brand-title {
   font-size: clamp(55px, 10vw, 120px);
-  font-weight: 500;
+  font-weight: 300;
   color: #111111;
   line-height: 0.9;
   letter-spacing: -2px;
@@ -260,11 +243,11 @@ nav.sticky .menu-btn {
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.4vw, 28px);
-  font-weight: 400;
+  font-size: clamp(18px, 2.4vw, 33px);
+  font-weight: 100;
   color: #111111;
-  margin-top: 6px;
-  letter-spacing: -0.5px;
+  margin-top: 0px;
+  letter-spacing: 1px;
 }
 
 /* Bloque interactivo de scroll inferior */
@@ -277,7 +260,7 @@ nav.sticky .menu-btn {
 }
 
 .hero-scroll-prompt .role-text {
-  font-size: 15px;
+  font-size: 25px;
   font-weight: 400;
   color: #1a1a1a;
   margin: 0;
@@ -288,7 +271,7 @@ nav.sticky .menu-btn {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 18px;
   color: #555555;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -296,32 +279,25 @@ nav.sticky .menu-btn {
 }
 
 .hero-scroll-prompt .scroll-link:hover {
-  color: var(--color-brand, #ff443a);
+  color: var(--color-brand);
 }
 
-/* Micro-animación sutil de rebote en la flecha */
 .scroll-arrow {
   font-size: 13px;
   animation: bounceDown 2s infinite ease-in-out;
 }
 
 @keyframes bounceDown {
-  0%, 20%, 50%, 80%, 100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(5px);
-  }
-  60% {
-    transform: translateY(2px);
-  }
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(2px); }
 }
 
 /* ==========================================================================
-   5. GALERÍA DE PROYECTOS
+   5. GALERÍA DE PROYECTOS (HOME)
    ========================================================================== */
 .gallery {
-  padding: 90px 0;
+  padding: 20px 0 100px 0;
   width: 100%;
   background: #ffffff;
 }
@@ -332,16 +308,17 @@ nav.sticky .menu-btn {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 26px;
+  gap: 24px;
 }
 
 .gallery-card {
   position: relative;
   aspect-ratio: 3 / 4;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 14px;
   cursor: pointer;
-  background-color: var(--color-surface);
+  background-color: #b0b0b0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
 .gallery-card img {
@@ -353,7 +330,7 @@ nav.sticky .menu-btn {
 }
 
 .gallery-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 .card-overlay {
@@ -362,7 +339,7 @@ nav.sticky .menu-btn {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 24px;
+  padding: 22px;
   background: linear-gradient(180deg, transparent 40%, rgba(14, 36, 49, 0.88) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -374,7 +351,7 @@ nav.sticky .menu-btn {
 
 .card-overlay h4 {
   color: #ffffff;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
   transform: translateY(8px);
   transition: transform 0.3s ease;
 }
@@ -397,6 +374,7 @@ nav.sticky .menu-btn {
   inset: 0;
   background: rgba(14, 36, 49, 0.9);
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 9999;
   display: flex;
   align-items: center;
@@ -545,125 +523,131 @@ nav.sticky .menu-btn {
 }
 
 /* ==========================================================================
-   8. FOOTER & BOTÓN SCROLL
+   8. PÁGINA PORTFOLIO / WORK (FEED CRONOLÓGICO)
    ========================================================================== */
-footer {
-  background: var(--color-brand);
-  padding: 16px 0;
-  text-align: center;
+.portfolio-feed {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 130px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
 }
 
-footer .text span {
-  font-size: 15px;
-  color: #ffffff;
+.project-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.entry-header-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.entry-info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.entry-info h2 {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.entry-info .project-year {
+  display: block;
+  font-size: 1.15rem;
   font-weight: 400;
+  color: #333333;
+  margin-bottom: 12px;
 }
 
-.scroll-button a {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  color: #ffffff;
-  background: var(--color-brand);
-  padding: 10px 14px;
-  font-size: 16px;
-  border-radius: 6px;
-  display: none;
-  z-index: 99;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
+.entry-info .project-discipline {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-brand);
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.scroll-button a:hover {
-  background: #e03229;
+.entry-info .project-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444444;
+  max-width: 440px;
+  margin-bottom: 28px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.project-tags li {
+  font-size: 0.8rem;
+  background-color: #f0f0f2;
+  color: #555555;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.entry-hero-media {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background-color: #b0b0b0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.entry-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.entry-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.process-item {
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  background-color: #b0b0b0;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.process-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.process-item:hover img {
+  transform: scale(1.03);
 }
 
 /* ==========================================================================
-   9. RESPONSIVE / MÓVILES
-   ========================================================================== */
-@media (max-width: 860px) {
-  .about {
-    padding: 100px 0 60px 0;
-  }
-
-  .about-details {
-    flex-direction: column;
-    text-align: center;
-    gap: 36px;
-  }
-
-  .about-details .left {
-    max-width: 320px;
-  }
-
-  .about-details .right p {
-    text-align: left;
-  }
-}
-
-@media (max-width: 768px) {
-  nav .navbar .menu {
-    position: fixed;
-    top: 0;
-    left: -100%;
-    background: #0e2431;
-    height: 100vh;
-    max-width: 340px;
-    width: 100%;
-    padding: 80px 30px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    transition: left 0.4s ease;
-  }
-
-  .navbar.active .menu {
-    left: 0;
-  }
-
-  nav .navbar .menu a {
-    font-size: 20px;
-    color: #ffffff;
-  }
-
-  .navbar .media-icons {
-    display: none;
-  }
-
-  .menu-btn {
-    display: block;
-  }
-
-  .navbar .menu .cancel-btn {
-    display: block;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    color: #ffffff;
-  }
-
-  .gallery-container {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .card-overlay {
-    opacity: 1;
-    background: linear-gradient(180deg, transparent 50%, rgba(14, 36, 49, 0.88) 100%);
-  }
-
-  .card-overlay h4,
-  .card-overlay h5 {
-    transform: translateY(0);
-  }
-}
-
-
-/* ==========================================================================
-   PÁGINA DE CONTACTO (ESTILO ESCRITORIO / NOTEBOOK)
+   9. PÁGINA CONTACTO (NOTEBOOK / DESK SCENE)
    ========================================================================== */
 #contact-page {
-  /* Puedes poner de fondo una ilustración con pattern o un fondo crema con textura */
   background-color: #f6f3ed;
   background-image: radial-gradient(#e3ded4 1.2px, transparent 1.2px);
   background-size: 20px 20px;
@@ -677,7 +661,7 @@ footer .text span {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 245px 20px 155px 20px;
+  padding: 120px 20px 60px 20px;
 }
 
 .desk-canvas {
@@ -690,7 +674,6 @@ footer .text span {
   position: relative;
 }
 
-/* 1. HOJA DE CUADERNO CENTRAL */
 .notebook-sheet {
   background: #fffdf9;
   border: 2px solid #222222;
@@ -703,7 +686,6 @@ footer .text span {
   z-index: 2;
 }
 
-/* Agujeros de anillado izquierdo */
 .notebook-holes {
   position: absolute;
   top: 30px;
@@ -722,9 +704,7 @@ footer .text span {
   border: 2px solid #222222;
 }
 
-/* Cabecera to: */
 .notebook-header {
-  font-family: var(--font-main);
   margin-bottom: 22px;
   font-size: 1.05rem;
 }
@@ -742,7 +722,6 @@ footer .text span {
   text-decoration-thickness: 1.5px;
 }
 
-/* Líneas de entrada de texto */
 .notebook-form {
   display: flex;
   flex-direction: column;
@@ -783,7 +762,6 @@ footer .text span {
   font-size: 0.9rem;
 }
 
-/* Botón Send tipo píldora oscura */
 .btn-notebook-send {
   margin-top: 15px;
   background-color: #222222;
@@ -804,7 +782,6 @@ footer .text span {
   transform: translateY(-2px);
 }
 
-/* 2. NOTAS LATERALES (POST-IT & ENVELOPE) */
 .desk-note {
   background: #ffffff;
   border: 2px solid #222222;
@@ -828,7 +805,6 @@ footer .text span {
   margin-bottom: 0;
 }
 
-/* Inclinación realista de escritorio */
 .note-left {
   transform: rotate(-7deg);
 }
@@ -845,9 +821,87 @@ footer .text span {
 }
 
 /* ==========================================================================
-   RESPONSIVE PARA MÓVIL
+   10. FOOTER & BOTÓN SCROLL
+   ========================================================================== */
+footer {
+  background: var(--color-brand);
+  padding: 16px 0;
+  text-align: center;
+}
+
+footer .text span {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.scroll-button a {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  color: #ffffff;
+  background: var(--color-brand);
+  padding: 10px 14px;
+  font-size: 16px;
+  border-radius: 6px;
+  display: none;
+  z-index: 99;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.scroll-button a:hover {
+  background: #e03229;
+}
+
+/* ==========================================================================
+   11. MEDIA QUERIES CONSOLIDADAS
    ========================================================================== */
 @media (max-width: 860px) {
+  /* About */
+  .about {
+    padding: 100px 0 60px 0;
+  }
+
+  .about-details {
+    flex-direction: column;
+    text-align: center;
+    gap: 36px;
+  }
+
+  .about-details .left {
+    max-width: 320px;
+  }
+
+  .about-details .right p {
+    text-align: left;
+  }
+
+  /* Portfolio Feed */
+  .portfolio-feed {
+    padding: 100px 0 60px 0;
+    gap: 70px;
+  }
+
+  .entry-header-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .entry-hero-media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .entry-process-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .process-item {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Contact Desk */
   .desk-canvas {
     flex-direction: column;
     gap: 20px;
@@ -856,10 +910,71 @@ footer .text span {
   .desk-note {
     width: 100%;
     max-width: 480px;
-    transform: none; /* Quitamos rotación en pantallas chicas */
+    transform: none;
   }
 
   .notebook-sheet {
     padding: 30px 20px 25px 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navegación móvil */
+  nav .navbar .menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background: #ffffff;
+    height: 100vh;
+    max-width: 320px;
+    width: 100%;
+    padding: 80px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.08);
+    transition: left 0.4s ease;
+  }
+
+  .navbar.active .menu {
+    left: 0;
+  }
+
+  nav .navbar .menu a {
+    font-size: 18px;
+    color: #111111;
+    padding: 10px 18px;
+  }
+
+  .navbar .media-icons {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar .menu .cancel-btn {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: #111111;
+  }
+
+  /* Galería móvil */
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, transparent 50%, rgba(14, 36, 49, 0.88) 100%);
+  }
+
+  .card-overlay h4,
+  .card-overlay h5 {
+    transform: translateY(0);
   }
 }
