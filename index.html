@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  
   <head>
     <meta charset="UTF-8" />
-    <title>yapoanto / Diseñadora</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>yapoanto / Antonia Alvear — Diseñadora</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   </head>
-
-  
   <body>
-    <!-- Move to up button -->
+    <!-- Botón scroll hacia arriba -->
     <div class="scroll-button">
       <a href="#home"><i class="fas fa-arrow-up"></i></a>
     </div>
-    <!-- navgaition menu -->
+
+    <!-- Menú de navegación -->
     <nav>
       <div class="navbar">
-        <div class="logo"><a href="#">AA</a></div>
+        <div class="logo"><a href="./">AA</a></div>
         <ul class="menu">
-          <li><a href="./">Home</a>
-          <li><a href="portfolio/">Portfolio</a></li>
-          <li><a href="about/">About</a></li>  
-          <li><a href="about/">Contact</a></li>  
+          <li><a href="portfolio/">PORTFOLIO</a></li>
+          <li><a href="about/">ABOUT ME</a></li>
+          <li><a href="contacto/">CONTACT</a></li>
           <div class="cancel-btn">
             <i class="fas fa-times"></i>
           </div>
@@ -40,22 +33,97 @@
         <i class="fas fa-bars"></i>
       </div>
     </nav>
-    <!-- Home Section Start -->
+
+    <!-- Hero / Portada -->
     <section class="home" id="home">
       <div class="home-content">
-        <div class="text">
-          <div class="text-two">yapoanto</div>
-          <div class="text-three">Antonia Alvear</div>
-        </div>
+        <h1>yapoanto</h1>
+        <h2>Antonia Alvear</h2>
+      </div>
+
+    <div class="hero-scroll-prompt">
+    <p class="role-text">Diseño e Ilustración</p>
+    <!-- Botón interactivo hacia la galería -->
+    <a href="#galeria" class="scroll-link">
+      <span>Baja para ver mi trabajo</span>
+      <i class="fas fa-chevron-down scroll-arrow"></i>
+    </a>
+  </div>
+  </section>
+
+    <!-- Galería de Proyectos -->
+    <section class="gallery" id="galeria">
+      <div class="gallery-container">
+        <!-- Reemplaza los src con las fotos y datos reales de Antonia -->
+        <article class="gallery-card" data-full="images/proyecto1.png" data-title="Identidad Visual — Marca X" data-tag="Branding / 2026">
+          <img src="../images/img-1.jpg" alt="Identidad Visual" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Identidad Visual — Marca X</h3>
+            <span>Branding / 2026</span>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-full="images/proyecto2.png" data-title="Diseño Editorial — Revista Y" data-tag="Editorial / 2026">
+          <img src="../images/img-7.jpg" alt="Diseño Editorial" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Diseño Editorial — Revista Y</h3>
+            <span>Editorial / 2026</span>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-full="images/proyecto3.png" data-title="Sistema de Packaging" data-tag="Packaging / 2025">
+          <img src="../images/img-3.jpg" alt="Packaging" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Sistema de Packaging</h3>
+            <span>Packaging / 2025</span>
+          </div>
+        </article>
+
+        <article class="gallery-card" data-full="images/proyecto4.png" data-title="Dirección de Arte Digital" data-tag="Digital / 2025">
+          <img src="../images/img-4.jpg" alt="Dirección de Arte" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Dirección de Arte Digital</h3>
+            <span>Digital / 2025</span>
+          </div>
+        </article>
+
+          <article class="gallery-card" data-full="images/proyecto4.png" data-title="Dirección de Arte Digital" data-tag="Digital / 2025">
+          <img src="../images/img-5.jpg" alt="Dirección de Arte" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Dirección de Arte Digital</h3>
+            <span>Digital / 2025</span>
+          </div>
+        </article>       
+        
+        <article class="gallery-card" data-full="images/proyecto4.png" data-title="Dirección de Arte Digital" data-tag="Digital / 2025">
+          <img src="../images/img-6.jpg" alt="Dirección de Arte" loading="lazy" />
+          <div class="card-overlay">
+            <h3>Dirección de Arte Digital</h3>
+            <span>Digital / 2025</span>
+          </div>
+        </article>
       </div>
     </section>
-    
-    <!-- Footer Section Start -->
+
+    <!-- Modal Lightbox (nativo y limpio) -->
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <img src="" alt="" id="lightbox-img" />
+        <div class="lightbox-info">
+          <h4 id="lightbox-title"></h4>
+          <span id="lightbox-tag"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
       <div class="text">
-        <span>Creado por <a href="#">CodingLab</a> | &#169; 2026 Todos los derechos reservados</span>
+        <span>© 2026 yapoanto. Todos los derechos reservados.</span>
       </div>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>
