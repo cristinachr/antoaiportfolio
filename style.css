@@ -657,3 +657,209 @@ footer .text span {
     transform: translateY(0);
   }
 }
+
+
+/* ==========================================================================
+   PÁGINA DE CONTACTO (ESTILO ESCRITORIO / NOTEBOOK)
+   ========================================================================== */
+#contact-page {
+  /* Puedes poner de fondo una ilustración con pattern o un fondo crema con textura */
+  background-color: #f6f3ed;
+  background-image: radial-gradient(#e3ded4 1.2px, transparent 1.2px);
+  background-size: 20px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-desk {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 245px 20px 155px 20px;
+}
+
+.desk-canvas {
+  width: 100%;
+  max-width: 1050px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  position: relative;
+}
+
+/* 1. HOJA DE CUADERNO CENTRAL */
+.notebook-sheet {
+  background: #fffdf9;
+  border: 2px solid #222222;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 35px 35px 55px;
+  position: relative;
+  box-shadow: 8px 10px 0px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+/* Agujeros de anillado izquierdo */
+.notebook-holes {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.notebook-holes span {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #f6f3ed;
+  border: 2px solid #222222;
+}
+
+/* Cabecera to: */
+.notebook-header {
+  font-family: var(--font-main);
+  margin-bottom: 22px;
+  font-size: 1.05rem;
+}
+
+.notebook-header .to-label {
+  font-weight: 600;
+  color: var(--color-brand);
+  margin-right: 6px;
+}
+
+.notebook-header .to-email {
+  color: #222222;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+}
+
+/* Líneas de entrada de texto */
+.notebook-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-line {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid #222222;
+  padding-bottom: 4px;
+}
+
+.input-line label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #777777;
+  text-transform: lowercase;
+  margin-bottom: 2px;
+}
+
+.input-line input,
+.input-line textarea {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: #111111;
+  width: 100%;
+  resize: none;
+}
+
+.input-line input::placeholder,
+.input-line textarea::placeholder {
+  color: #bbbbbb;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+/* Botón Send tipo píldora oscura */
+.btn-notebook-send {
+  margin-top: 15px;
+  background-color: #222222;
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 12px 0;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-notebook-send:hover {
+  background-color: var(--color-brand);
+  transform: translateY(-2px);
+}
+
+/* 2. NOTAS LATERALES (POST-IT & ENVELOPE) */
+.desk-note {
+  background: #ffffff;
+  border: 2px solid #222222;
+  padding: 22px 18px;
+  border-radius: 12px;
+  width: 210px;
+  box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.desk-note h4 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+  color: #222222;
+}
+
+.desk-note p {
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #555555;
+  margin-bottom: 0;
+}
+
+/* Inclinación realista de escritorio */
+.note-left {
+  transform: rotate(-7deg);
+}
+
+.note-right {
+  transform: rotate(6deg);
+}
+
+.envelope-badge,
+.pin-clip {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: var(--color-brand);
+}
+
+/* ==========================================================================
+   RESPONSIVE PARA MÓVIL
+   ========================================================================== */
+@media (max-width: 860px) {
+  .desk-canvas {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .desk-note {
+    width: 100%;
+    max-width: 480px;
+    transform: none; /* Quitamos rotación en pantallas chicas */
+  }
+
+  .notebook-sheet {
+    padding: 30px 20px 25px 45px;
+  }
+}
