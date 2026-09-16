@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -29,7 +28,7 @@
           </div>
         </ul>
         <div class="media-icons">
-          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.instagram.com/yapoanto/"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="menu-btn">
@@ -37,7 +36,59 @@
       </div>
     </nav>
 
+<!-- Escena Desk / Ilustradora -->
+    <main class="contact-desk">
+      <div class="desk-canvas">
+        
+        <!-- Tarjeta Izquierda (Sobre / Nota de bienvenida) -->
+        <aside class="desk-note note-left">
+          <div class="envelope-badge">
+            <i class="far fa-envelope-open"></i>
+          </div>
+          <h4>¡Escríbeme!</h4>
+          <p>No dudes en contactarme para cotizaciones o dudas</p>
+        </aside>
 
+        <!-- Hoja Central Cuaderno (Formulario) -->
+        <section class="notebook-sheet">
+          <div class="notebook-holes">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+
+          <form class="notebook-form" action="https://formspree.io/f/TU_ID_AQUI" method="POST">
+            <div class="notebook-header">
+              <span class="to-label">to:</span>
+              <a href="mailto:hola@yapoanto.cl" class="to-email">hola@yapoanto.cl</a>
+            </div>
+
+            <div class="input-line">
+              <label for="name">de / nombre:</label>
+              <input type="text" id="name" name="name" placeholder="tu nombre o marca" required />
+            </div>
+
+            <div class="input-line">
+              <label for="email">email:</label>
+              <input type="email" id="email" name="email" placeholder="tu@correo.com" required />
+            </div>
+
+            <div class="input-line message-line">
+              <label for="message">Mensaje:</label>
+              <textarea id="message" name="message" rows="3" placeholder="cuéntame de tu proyecto..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-notebook-send">enviar</button>
+          </form>
+        </section>
+
+        <!-- Tarjeta Derecha (Post-It / Estado Freelance) -->
+        <aside class="desk-note note-right">
+          <div class="pin-clip"><i class="fas fa-paperclip"></i></div>
+          <h4>Disponible</h4>
+          <p>Para proyectos etc etc</p>
+        </aside>
+
+      </div>
+    </main>
 
         <footer>
       <div class="text">
