@@ -209,61 +209,64 @@ nav .navbar .menu {
 }
 
 /* ==========================================================================
-   4. HERO / PORTADA (PEEK DE GALERÍA)
+   4. HERO / PORTADA (CENTRADO REAL SIN DESBORDES)
    ========================================================================== */
 .home {
-  min-height: 88vh; /* Permite asomar las tarjetas inferiores */
+  min-height: 88vh;       /* Mantiene el asomo de la galería abajo */
   width: 100%;
   background-color: #ffffff;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 250px 20px 200x 20px;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente en la pantalla */
+  position: relative;      /* Permite anclar el botón de scroll abajo */
+  padding: 0 20px;
 }
 
+/* Bloque central: yapoanto + Antonia Alvear a la derecha */
 .hero-brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end; /* Alinea los hijos al extremo derecho de la caja */
-  width: fit-content;    /* Evita que se expanda al 100% de la pantalla */
-  margin-top: auto;
-  margin-bottom: auto;
-  transform: translateY(-10px);
+  align-items: flex-end;   /* Antonia pegada a la derecha de la 'o' */
+  width: fit-content;
+  text-align: right;
+  margin: 0;
+  transform: translateY(-20px); /* Ajuste óptico fino hacia arriba */
 }
 
 .brand-title {
-  font-size: clamp(55px, 10vw, 120px);
+  font-size: clamp(55px, 9vw, 115px);
   font-weight: 500;
   color: #111111;
-  line-height: 0.9;
+  line-height: 0.95;
   letter-spacing: -2px;
   margin: 0;
   text-transform: lowercase;
-  text-align: right;
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.4vw, 28px);
+  font-size: clamp(18px, 2.3vw, 28px);
   font-weight: 400;
   color: #111111;
-  margin-top: 6px;
+  margin-top: 8px;
   letter-spacing: -0.5px;
-  text-align: right;     /* Asegura la alineación visual hacia la derecha */
 }
 
-/* Bloque interactivo de scroll inferior */
+/* Bloque inferior de scroll fijado a la base de la sección */
 .hero-scroll-prompt {
+  position: absolute;
+  bottom: 25px;            /* Siempre anclado abajo sin empujar al título */
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-bottom: 20px;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
 }
 
 .hero-scroll-prompt .role-text {
-  font-size: 25px;
+  font-size: 15px;
   font-weight: 400;
   color: #1a1a1a;
   margin: 0;
@@ -274,7 +277,7 @@ nav .navbar .menu {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-  font-size: 18px;
+  font-size: 14px;
   color: #555555;
   text-decoration: none;
   transition: color 0.3s ease;
@@ -282,7 +285,7 @@ nav .navbar .menu {
 }
 
 .hero-scroll-prompt .scroll-link:hover {
-  color: var(--color-brand);
+  color: var(--color-brand, #ff443a);
 }
 
 .scroll-arrow {
