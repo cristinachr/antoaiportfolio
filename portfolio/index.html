@@ -14,7 +14,6 @@
       <div class="navbar">
         <div class="logo"><a href="../">AA</a></div>
         <ul class="menu">
-          <!-- Botón activo estilo cápsula según la maqueta -->
           <li><a href="./" class="nav-active-pill">PORTFOLIO</a></li>
           <li><a href="../about/">ABOUT ME</a></li>
           <li><a href="../contacto/">CONTACT</a></li>
@@ -27,128 +26,126 @@
       <div class="menu-btn"><i class="fas fa-bars"></i></div>
     </nav>
 
-    <main class="portfolio-feed">
-
-      <!-- ================= ENTRADA 01 (2026) ================= -->
-      <article class="project-entry">
-        <!-- Fila superior: Texto a la izquierda, Imagen principal a la derecha -->
-        <div class="entry-header-grid">
-          <div class="entry-info">
-            <header>
-              <h2>Título del proyecto</h2>
-              <span class="project-year">2026</span>
-              <p class="project-discipline">Dirección de Arte / Identidad Visual</p>
-            </header>
-            
-            <p class="project-desc">
-              Descripción del proyecto en un texto breve y claro sobre qué es y para quién. Un resumen conceptual del encargo y la solución visual adoptada.
-            </p>
-
-            <ul class="project-tags">
-              <li>Editorial</li>
-              <li>Tipografía</li>
-              <li>Print</li>
-            </ul>
-          </div>
-
-          <figure class="entry-hero-media">
-            <!-- Imagen principal/destacada grande -->
-            <img src="images/proyecto1-main.jpg" alt="Vista principal de Título del proyecto" loading="lazy" />
-          </figure>
+    <!-- Contenedor Principal de Trabajos -->
+    <main class="portfolio-view">
+      
+      <!-- Encabezado de la página -->
+      <header class="portfolio-intro">
+        <h2>Trabajos & Proyectos</h2>
+        <p>Una selección de proyectos de identidad visual, dirección de arte, publicaciones impresas e ilustración digital desarrollados entre 2024 y 2026.</p>
+        
+        <!-- Filtros interactivos -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="branding">Branding</button>
+          <button class="filter-btn" data-filter="editorial">Editorial</button>
+          <button class="filter-btn" data-filter="ilustracion">Ilustración</button>
         </div>
+      </header>
 
-        <!-- Fila inferior: 3 imágenes de proceso, detalles o variantes -->
-        <div class="entry-process-grid">
-          <figure class="process-item">
-            <img src="images/proyecto1-detalle1.jpg" alt="Detalle 01" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto1-detalle2.jpg" alt="Detalle 02" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto1-detalle3.jpg" alt="Detalle 03" loading="lazy" />
-          </figure>
-        </div>
-      </article>
+      <!-- Grilla Curada de Proyectos -->
+      <section class="projects-masonry-grid">
 
-      <!-- ================= ENTRADA 02 (2025) ================= -->
-      <article class="project-entry">
-        <div class="entry-header-grid">
-          <div class="entry-info">
-            <header>
-              <h2>Segundo proyecto</h2>
-              <span class="project-year">2025</span>
-              <p class="project-discipline">Ilustración</p>
-            </header>
-            
-            <p class="project-desc">
-              Exploración de empaque botánico y sistema gráfico para serie limitada de productos orgánicos.
-            </p>
+        <!-- Proyecto 01: Destacado Grande (2 Columnas) -->
+        <article class="project-tile tile-wide" data-category="editorial">
+          <a href="proyecto1.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-1.jpg" alt="Revista Experimental" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Revista Experimental — Volumen IV</h4>
+                <span class="caption-year">2026</span>
+              </div>
+              <p class="caption-tag">Diseño Editorial & Tipografía</p>
+            </div>
+          </a>
+        </article>
 
-            <ul class="project-tags">
-              <li>Packaging</li>
-              <li>Ilustración</li>
-            </ul>
-          </div>
+        <!-- Proyecto 02: Formato estándar vertical -->
+        <article class="project-tile" data-category="branding">
+          <a href="proyecto2.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-2.jpg" alt="Identidad Visual Marca X" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Identidad Visual Marca X</h4>
+                <span class="caption-year">2026</span>
+              </div>
+              <p class="caption-tag">Branding / Sistema Gráfico</p>
+            </div>
+          </a>
+        </article>
 
-          <figure class="entry-hero-media">
-            <img src="images/proyecto2-main.jpg" alt="Vista principal Proyecto 2" loading="lazy" />
-          </figure>
-        </div>
+        <!-- Proyecto 03: Formato estándar vertical -->
+        <article class="project-tile" data-category="ilustracion">
+          <a href="proyecto3.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-3.jpg" alt="Serie Botánica" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Exploración Botánica</h4>
+                <span class="caption-year">2025</span>
+              </div>
+              <p class="caption-tag">Ilustración Digital</p>
+            </div>
+          </a>
+        </article>
 
-        <div class="entry-process-grid">
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle1.jpg" alt="Proceso 01" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle2.jpg" alt="Proceso 02" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle3.jpg" alt="Proceso 03" loading="lazy" />
-          </figure>
-        </div>
-      </article>
+        <!-- Proyecto 04: Formato estándar vertical -->
+        <article class="project-tile" data-category="branding">
+          <a href="proyecto4.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-4.jpg" alt="Packaging Café" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Línea de Packaging Café</h4>
+                <span class="caption-year">2025</span>
+              </div>
+              <p class="caption-tag">Branding & Packaging</p>
+            </div>
+          </a>
+        </article>
 
-      <!-- ================= ENTRADA 03 (2024) ================= -->
-      <article class="project-entry">
-        <div class="entry-header-grid">
-          <div class="entry-info">
-            <header>
-              <h2>Tercer proyecto</h2>
-              <span class="project-year">2025</span>
-              <p class="project-discipline">Ilustración</p>
-            </header>
-            
-            <p class="project-desc">
-              Exploración de empaque botánico y sistema gráfico para serie limitada de productos orgánicos.
-            </p>
+        <!-- Proyecto 05: Destacado Grande (2 Columnas) -->
+        <article class="project-tile tile-wide" data-category="ilustracion">
+          <a href="proyecto5.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-5.jpg" alt="Dirección de Arte & Poster" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Poster Series: Resonancias</h4>
+                <span class="caption-year">2025</span>
+              </div>
+              <p class="caption-tag">Ilustración & Print</p>
+            </div>
+          </a>
+        </article>
 
-            <ul class="project-tags">
-              <li>Packaging</li>
-              <li>Ilustración</li>
-            </ul>
-          </div>
+        <!-- Proyecto 06: Formato estándar vertical -->
+        <article class="project-tile" data-category="editorial">
+          <a href="proyecto6.html" class="tile-link">
+            <figure class="tile-media">
+              <img src="../images/img-6.jpg" alt="Catálogo de Tipografías" loading="lazy" />
+            </figure>
+            <div class="tile-caption">
+              <div class="caption-head">
+                <h4>Catálogo de Especímenes</h4>
+                <span class="caption-year">2024</span>
+              </div>
+              <p class="caption-tag">Editorial</p>
+            </div>
+          </a>
+        </article>
 
-          <figure class="entry-hero-media">
-            <img src="images/proyecto2-main.jpg" alt="Vista principal Proyecto 2" loading="lazy" />
-          </figure>
-        </div>
-
-        <div class="entry-process-grid">
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle1.jpg" alt="Proceso 01" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle2.jpg" alt="Proceso 02" loading="lazy" />
-          </figure>
-          <figure class="process-item">
-            <img src="images/proyecto2-detalle3.jpg" alt="Proceso 03" loading="lazy" />
-          </figure>
-        </div>
-      </article>
-
+      </section>
     </main>
 
+    <!-- Footer -->
     <footer>
       <div class="text">
         <span>© 2026 yapoanto. Todos los derechos reservados.</span>
