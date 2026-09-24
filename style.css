@@ -226,29 +226,35 @@ nav .navbar .menu {
 .hero-brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end;   /* Antonia pegada a la derecha de la 'o' */
-  width: fit-content;
+  align-items: flex-end;    /* Alinea ambos hijos al borde derecho */
+  width: max-content;       /* Clave: mide estrictamente lo que mide 'yapoanto' */
+  max-width: 100%;
+  margin: 0 auto;
   text-align: right;
-  margin: 0;
-  transform: translateY(-20px); /* Ajuste óptico fino hacia arriba */
+  transform: translateY(-20px);
 }
 
 .brand-title {
-  font-size: clamp(55px, 9vw, 115px);
+  font-size: clamp(55px, 10vw, 120px);
   font-weight: 500;
   color: #111111;
   line-height: 0.95;
   letter-spacing: -2px;
   margin: 0;
   text-transform: lowercase;
+  display: block;
+  text-align: right;
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.3vw, 28px);
+  font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 400;
   color: #111111;
   margin-top: 8px;
   letter-spacing: -0.5px;
+  display: block;
+  text-align: right;
+  align-self: flex-end;     /* Asegura el anclaje a la derecha */
 }
 
 /* Bloque inferior de scroll fijado a la base de la sección */
