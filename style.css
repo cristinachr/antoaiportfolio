@@ -235,10 +235,10 @@ nav .navbar .menu {
 }
 
 .brand-title {
-  font-size: clamp(55px, 10vw, 120px);
-  font-weight: 500;
+  font-size: clamp(55px, 10vw, 140px);
+  font-weight: 300;
   color: #111111;
-  line-height: 0.95;
+  line-height: 0.55;
   letter-spacing: -2px;
   margin: 0;
   text-transform: lowercase;
@@ -247,7 +247,7 @@ nav .navbar .menu {
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.4vw, 28px);
+  font-size: clamp(18px, 2.4vw, 43px);
   font-weight: 400;
   color: #111111;
   margin-top: 8px;
