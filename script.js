@@ -86,15 +86,6 @@ const hideLightbox = () => {
   body.style.overflow = "auto";
 };
 
-// Eventos en tarjetas de la galería
-galleryCards.forEach((card) => {
-  card.addEventListener("click", () => {
-    const fullImg = card.getAttribute("data-full") || card.querySelector("img")?.src;
-    const title = card.getAttribute("data-title") || "";
-    const tag = card.getAttribute("data-tag") || "";
-    if (fullImg) showLightbox(fullImg, title, tag);
-  });
-});
 
 // Cerrar con botón X
 lightboxClose?.addEventListener("click", hideLightbox);
@@ -120,4 +111,36 @@ const gallerySection = document.getElementById("galeria");
 scrollLink?.addEventListener("click", (e) => {
   e.preventDefault();
   gallerySection?.scrollIntoView({ behavior: "smooth" });
+});
+
+// Filtro interactivo de proyectos en la página de Portafolio
+const filterButtons = document.querySelectorAll(".filter-btn");
+const projectTiles = document.querySelectorAll(".project-tile");
+
+filterButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // Alternar botón activo
+    filterButtons.forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    const targetCategory = btn.getAttribute("data-filter");
+
+    projectTiles.forEach((tile) => {
+      const tileCategory = tile.getAttribute("data-category");
+
+      if (targetCategory === "all" || tileCategory === targetCategory) {
+        tile.style.display = "flex";
+        setTimeout(() => {
+          tile.style.opacity = "1";
+          tile.style.transform = "scale(1)";
+        }, 50);
+      } else {
+        tile.style.opacity = "0";
+        tile.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          tile.style.display = "none";
+        }, 250);
+      }
+    });
+  });
 });
