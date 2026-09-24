@@ -345,6 +345,16 @@ nav .navbar .menu {
   transform: scale(1.03);
 }
 
+.gallery-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -830,6 +840,192 @@ nav .navbar .menu {
   font-size: 24px;
   margin-bottom: 10px;
   color: var(--color-brand);
+}
+
+
+/* ==========================================================================
+   PÁGINA DEDICADA DE PORTAFOLIO (LAYOUT EDITORIAL CON FILTROS)
+   ========================================================================== */
+.portfolio-view {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 130px 0 100px 0;
+}
+
+/* Cabecera & Pestañas de Filtro */
+.portfolio-intro {
+  margin-bottom: 50px;
+}
+
+.portfolio-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.portfolio-intro p {
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 620px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  padding: 7px 18px;
+  border-radius: 25px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.filter-btn.active {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+/* Grilla con Ritmo Asimétrico */
+.projects-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 26px;
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Pieza destacada que ocupa 2 columnas */
+.project-tile.tile-wide {
+  grid-column: span 2;
+}
+
+/* Enlace contenedor */
+.tile-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* Contenedor de la imagen */
+.tile-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #b0b0b0;
+  margin-bottom: 14px;
+}
+
+.tile-wide .tile-media {
+  aspect-ratio: 16 / 9.5; /* Más panorámica para el elemento ancho */
+}
+
+.tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tile-link:hover .tile-media img {
+  transform: scale(1.03);
+}
+
+/* Textos editoriales debajo de cada imagen */
+.tile-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.caption-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.caption-head h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.tile-link:hover .caption-head h4 {
+  color: var(--color-brand, #ff443a);
+}
+
+.caption-year {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 400;
+}
+
+.caption-tag {
+  font-size: 0.88rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE PARA LA GRILLA DE PORTAFOLIO
+   ========================================================================== */
+@media (max-width: 900px) {
+  .projects-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+
+  .project-tile.tile-wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-view {
+    padding-top: 100px;
+  }
+
+  .projects-masonry-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-tile.tile-wide {
+    grid-column: span 1;
+  }
+
+  .tile-wide .tile-media {
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ==========================================================================
