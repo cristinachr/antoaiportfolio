@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — yapoanto / Antonia Alvear</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  </head>
+
+  <body id="portfolio-page">
+    <!-- Navegación -->
+    <nav>
+      <div class="navbar">
+        <div class="logo"><a href="../">AA</a></div>
+        <ul class="menu">
+          <!-- Botón activo estilo cápsula según la maqueta -->
+          <li><a href="./" class="nav-active-pill">PORTFOLIO</a></li>
+          <li><a href="../about/">ABOUT ME</a></li>
+          <li><a href="../contacto/">CONTACT</a></li>
+          <div class="cancel-btn"><i class="fas fa-times"></i></div>
+        </ul>
+        <div class="media-icons">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="menu-btn"><i class="fas fa-bars"></i></div>
+    </nav>
+
+
+    
+    <main class="portfolio-feed">
+
+      <!-- ================= ENTRADA 01 (2026) ================= -->
+      <article class="project-entry">
+        <!-- Fila superior: Texto a la izquierda, Imagen principal a la derecha -->
+        <div class="entry-header-grid">
+          <div class="entry-info">
+            <header>
+              <h2>Título del proyecto</h2>
+              <span class="project-year">2026</span>
+              <p class="project-discipline">Dirección de Arte / Identidad Visual</p>
+            </header>
+            
+            <p class="project-desc">
+              Descripción del proyecto en un texto breve y claro sobre qué es y para quién. Un resumen conceptual del encargo y la solución visual adoptada.
+            </p>
+
+            <ul class="project-tags">
+              <li>Editorial</li>
+              <li>Tipografía</li>
+              <li>Print</li>
+            </ul>
+          </div>
+
+          <figure class="entry-hero-media">
+            <!-- Imagen principal/destacada grande -->
+            <img src="images/proyecto1-main.jpg" alt="Vista principal de Título del proyecto" loading="lazy" />
+          </figure>
+        </div>
+
+        <!-- Fila inferior: 3 imágenes de proceso, detalles o variantes -->
+        <div class="entry-process-grid">
+          <figure class="process-item">
+            <img src="images/proyecto1-detalle1.jpg" alt="Detalle 01" loading="lazy" />
+          </figure>
+          <figure class="process-item">
+            <img src="images/proyecto1-detalle2.jpg" alt="Detalle 02" loading="lazy" />
+          </figure>
+          <figure class="process-item">
+            <img src="images/proyecto1-detalle3.jpg" alt="Detalle 03" loading="lazy" />
+          </figure>
+        </div>
+      </article>
+
+    </main>
+
+    <footer>
+      <div class="text">
+        <span>© 2026 yapoanto. Todos los derechos reservados.</span>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
