@@ -1042,37 +1042,45 @@ nav .navbar .logo a:hover .nav-logo-svg {
 }
 
 /* ==========================================================================
-   10. FOOTER & BOTÓN SCROLL
+   FOOTER MINIMALISTA & DISCRETO
    ========================================================================== */
 footer {
-  background: var(--color-brand);
-  padding: 14px 0;
+  background: var(--color-bg-light, #ffffff); /* Mismo color del fondo de la web */
+  border-top: 1px solid rgba(0, 0, 0, 0.06);   /* Línea ultrafina casi imperceptible */
+  padding: 32px 0;
   text-align: center;
+  width: 100%;
 }
 
 footer .text span {
-  font-size: 14px;
-  color: #ffffff;
+  font-size: 0.8rem;                           /* Tipografía pequeña y refinada */
+  color: #888888;                              /* Gris suave no invasivo */
   font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
+/* Botón flotante para subir (ahora a tono discreto) */
 .scroll-button a {
   position: fixed;
   bottom: 25px;
   right: 25px;
-  color: #ffffff;
-  background: var(--color-brand);
-  padding: 10px 14px;
-  font-size: 16px;
-  border-radius: 6px;
+  color: #111111;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 50%;                          /* Circular minimalista */
   display: none;
   z-index: 99;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
 }
 
 .scroll-button a:hover {
-  background: #e03229;
+  background: #111111;
+  color: #ffffff;
+  border-color: #111111;
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
