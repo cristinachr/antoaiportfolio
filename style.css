@@ -305,25 +305,6 @@ nav .navbar .menu {
   60% { transform: translateY(2px); }
 }
 
-.hero-brand {
-  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.hero-scroll-prompt {
-  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
-  opacity: 0; /* Arranca oculto y entra con delay */
-}
-
-@keyframes heroReveal {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ==========================================================================
    5. GALERÍA DE PROYECTOS (HOME)
