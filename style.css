@@ -407,6 +407,17 @@ nav .navbar .menu {
   transform: translateY(0);
 }
 
+/* Efecto Focus Mode en Galería */
+.gallery-container:hover .gallery-card:not(:hover) {
+  opacity: 0.45;
+  transform: scale(0.98);
+  transition: all 0.35s ease;
+}
+
+.gallery-card {
+  transition: transform 0.4s ease, opacity 0.35s ease;
+}
+
 /* ==========================================================================
    6. LIGHTBOX / VISOR MODAL
    ========================================================================== */
