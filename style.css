@@ -208,6 +208,19 @@ nav .navbar .menu {
   color: #111111;
 }
 
+.nav-logo-svg {
+  height: 28px;              /* Altura controlada para el nav */
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav .navbar .logo a:hover .nav-logo-svg {
+  transform: scale(1.04);
+  opacity: 0.75;
+}
+
+
 /* ==========================================================================
    4. HERO / PORTADA (CENTRADO REAL SIN DESBORDES)
    ========================================================================== */
