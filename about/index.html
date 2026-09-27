@@ -1,75 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
-
   <head>
     <meta charset="UTF-8" />
-    <title>yapoanto / Diseñadora</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - yapoanto / Antonia Alvear</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
   </head>
 
-  <body>
-       <!-- Move to up button -->
-    <div class="scroll-button">
-      <a href="#home"><i class="fas fa-arrow-up"></i></a>
-    </div>
-
-    <!-- navgaition menu -->
+  <body id="about-page">
+    <!-- Navegación -->
     <nav>
       <div class="navbar">
         <div class="logo"><a href="../">AA</a></div>
         <ul class="menu">
           <li><a href="../portfolio/">PORTFOLIO</a></li>
-          <li><a href="./" class="nav-active-pill">ABOUT ME</a></li>  
-          <li><a href="../contacto/">CONTACT</a></li>  
-          <div class="cancel-btn">
-            <i class="fas fa-times"></i>
-          </div>
+          <li><a href="./" class="nav-active-pill">ABOUT ME</a></li>
+          <li><a href="../contacto/">CONTACT</a></li>
+          <div class="cancel-btn"><i class="fas fa-times"></i></div>
         </ul>
         <div class="media-icons">
-          <a href="https://www.instagram.com/yapoanto/"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
-      <div class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </div>
+      <div class="menu-btn"><i class="fas fa-bars"></i></div>
     </nav>
-           <!-- About Section Start -->
-    <section class="about" id="about">
-      <div class="content">
-        <div class="title"><h2>Antonia Alvear</h2></div>
-        <div class="about-details">
-          <div class="left">
-            <img src="../images/mili.jpg" alt="" />
-          </div>
-          <div class="right">
 
-            <p>
-            Antonia es diseñadora e ilustradora chilena. Su práctica se mueve entre el diseño de productos, la creación de objetos, la ilustración y la experimentación visual, 
-              adaptándose a distintos formatos y escalas. Tiene un fuerte interés por la experimentación y por el aprendizaje que surge a través de los procesos de diseño, explorando 
-              distintas formas de observar, interpretar y dar valor a lo cotidiano. <br>
-Uno de los pilares de su trabajo es <b>Yapoanto</b>, un universo visual que nace del valor del cotidiano. A través de personajes, objetos e imágenes, busca observar y reinterpretar situaciones, 
-              objetos, espacios y experiencias que forman parte de nuestras rutinas, explorando cómo estos pueden adquirir nuevos significados y generar vínculos con quienes los habitan. <br>
-Yapoanto es una invitación a detenerse, observar y encontrar belleza en aquello que ya nos rodea; a rescatar la calidez y ternura de las pequeñas cosas, reconectar con lo esencial y redescubrir
-              la magia de lo cotidiano. A recordar que, incluso en medio de la rutina, seguimos siendo seres explorando este mundo por primera vez.
-
-            </p>
-            <div class="button">
-              <a href="../contacto/" class="btn-primary">contáctame :)</a>            </div>
-          </div>
+    <!-- Contenido Principal About -->
+    <main class="about-editorial">
+      
+      <!-- Fila 1: Presentación & Retrato -->
+      <section class="about-hero-grid">
+        <div class="about-portrait-col">
+          <figure class="portrait-wrapper">
+            <img src="../images/about.jpg" alt="Antonia Alvear" loading="lazy" />
+          </figure>
+          <figcaption class="portrait-caption">Antonia Alvear & compañía en el taller.</figcaption>
         </div>
-      </div>
-    </section>
 
+        <div class="about-bio-col">
+          <span class="bio-tagline">Diseñadora & Ilustradora — Santiago, CL</span>
+          <h2>Antonia Alvear</h2>
+          
+          <p class="bio-lead">
+            Mi práctica se mueve entre el diseño de productos, la creación de objetos tangibles, la ilustración y la experimentación visual, adaptándose a distintos formatos y escalas.
+          </p>
+          <p>
+            Tengo un fuerte interés por el aprendizaje que surge a través de los procesos de diseño: explorar nuevas formas de observar, interpretar y darle valor a lo cotidiano para generar vínculos reales con quienes habitan cada pieza.
+          </p>
+        </div>
+      </section>
 
+      <!-- Fila 2: Manifiesto / Universo Yapoanto -->
+      <section class="yapoanto-statement-card">
+        <div class="statement-header">
+          <span class="statement-badge">El Concepto</span>
+          <h3>Yapoanto: El valor de lo cotidiano</h3>
+        </div>
+        <blockquote>
+          «Una invitación a detenerse, observar y encontrar belleza en aquello que ya nos rodea; a rescatar la calidez y ternura de las pequeñas cosas, reconectar con lo esencial y recordar que, incluso en medio de la rutina, seguimos explorando este mundo por primera vez.»
+        </blockquote>
+      </section>
 
-        <footer>
+      <!-- Fila 3: Capacidades & Llamado a la Acción -->
+      <section class="about-capabilities-grid">
+        <div class="capabilities-block">
+          <h4>// Áreas de Práctica</h4>
+          <ul class="capability-list">
+            <li>Ilustración Editorial & Digital</li>
+            <li>Identidad Visual & Branding</li>
+            <li>Diseño de Objetos & Productos</li>
+            <li>Dirección de Arte & Print</li>
+          </ul>
+        </div>
+
+        <div class="cta-contact-block">
+          <h4>// Colaboraciones</h4>
+          <p>Disponible para comisiones ilustradas, proyectos de diseño independiente y colaboraciones creativas.</p>
+          <a href="../contacto/" class="btn-about-contact">Hablemos de un proyecto ↗</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
       <div class="text">
         <span>© 2026 yapoanto. Todos los derechos reservados.</span>
       </div>
     </footer>
-    <script src="script.js"></script>
-   </body> 
 
+    <script src="../script.js"></script>
+  </body>
 </html>
