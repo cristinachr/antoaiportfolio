@@ -1186,3 +1186,231 @@ footer .text span {
     transform: translateY(0);
   }
 }
+
+
+/* ==========================================================================
+   SECCIÓN ABOUT ME (EDITORIAL, MODULAR & BALANCEADO)
+   ========================================================================== */
+.about-editorial {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 130px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+/* 1. Grilla Superior (Foto a la izquierda, Bio a la derecha) */
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.about-portrait-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portrait-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 4.8;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-surface, #f4f4f6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.portrait-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait-caption {
+  font-size: 0.8rem;
+  color: #888888;
+  font-style: italic;
+  padding-left: 4px;
+}
+
+.about-bio-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.bio-tagline {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brand, #ff443a);
+  margin-bottom: 8px;
+}
+
+.about-bio-col h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.bio-lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.about-bio-col p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
+}
+
+/* 2. Tarjeta Manifiesto (Yapoanto) */
+.yapoanto-statement-card {
+  background-color: #faf9f6; /* Blanco roto cálido editorial */
+  border-left: 3px solid var(--color-brand, #ff443a);
+  border-radius: 4px 14px 14px 4px;
+  padding: 40px 45px;
+}
+
+.statement-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.statement-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  color: #555555;
+}
+
+.statement-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.yapoanto-statement-card blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d3748;
+  margin: 0;
+}
+
+/* 3. Bloque Inferior: Capacidades & CTA */
+.about-capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #ebebeb;
+}
+
+.capabilities-block h4,
+.cta-contact-block h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888888;
+  margin-bottom: 18px;
+}
+
+.capability-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.capability-list li {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.capability-list li::before {
+  content: '—';
+  color: var(--color-brand, #ff443a);
+  font-weight: 700;
+}
+
+.cta-contact-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.btn-about-contact {
+  display: inline-block;
+  background-color: #111111;
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-about-contact:hover {
+  background-color: var(--color-brand, #ff443a);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   RESPONSIVE PARA ABOUT ME
+   ========================================================================== */
+@media (max-width: 860px) {
+  .about-editorial {
+    padding-top: 100px;
+    gap: 50px;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .portrait-wrapper {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .portrait-caption {
+    text-align: center;
+  }
+
+  .yapoanto-statement-card {
+    padding: 30px 24px;
+  }
+
+  .about-capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
