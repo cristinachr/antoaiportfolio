@@ -4,10 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Tipografía */
   --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* Paleta cromática */
   --color-brand: #ff443a;
   --color-heading: #0e2431;
   --color-body: #4a5568;
@@ -58,41 +56,35 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
 }
 
-/* H1: Logotipo / Nombre central */
 h1 {
   font-size: clamp(3.5rem, 9.5vw, 7.5rem);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 0.95;
   letter-spacing: -0.03em;
   text-transform: lowercase;
 }
 
-/* H2: Subtítulo editorial / Títulos de sección */
 h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 400;
+  font-weight: 600;
 }
 
-/* H3: Subsecciones / Entradas medianas */
 h3 {
   font-size: clamp(1.3rem, 2.5vw, 1.75rem);
   font-weight: 600;
 }
 
-/* H4: Títulos de tarjetas de proyectos y modales */
 h4 {
   font-size: clamp(1.05rem, 1.5vw, 1.25rem);
   font-weight: 500;
 }
 
-/* H5: Metadatos y subtítulos de tarjeta */
 h5 {
   font-size: 0.88rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* H6: Tags técnicos o etiquetas */
 h6 {
   font-size: 0.75rem;
   font-weight: 600;
@@ -117,7 +109,7 @@ small {
 }
 
 /* ==========================================================================
-   3. NAVEGACIÓN (LIVIANA, TRANSLÚCIDA Y ESPACIADA)
+   3. NAVEGACIÓN
    ========================================================================== */
 nav {
   position: fixed;
@@ -160,12 +152,23 @@ nav .navbar .logo a:hover {
   color: var(--color-brand);
 }
 
-/* Menú con mayor distancia entre palabras */
+.nav-logo-svg {
+  height: 28px;
+  width: auto;
+  display: block;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+nav .navbar .logo a:hover .nav-logo-svg {
+  transform: scale(1.04);
+  opacity: 0.75;
+}
+
 nav .navbar .menu {
   display: flex;
   align-items: center;
   list-style: none;
-  gap: 48px; /* Separación amplia y editorial */
+  gap: 48px;
 }
 
 .navbar .menu a {
@@ -182,7 +185,6 @@ nav .navbar .menu {
   color: #111111;
 }
 
-/* Cápsula activa redondeada */
 .navbar .menu a.nav-active-pill {
   color: #111111;
   border: 1.5px solid #111111;
@@ -208,39 +210,25 @@ nav .navbar .menu {
   color: #111111;
 }
 
-.nav-logo-svg {
-  height: 28px;              /* Altura controlada para el nav */
-  width: auto;
-  display: block;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-nav .navbar .logo a:hover .nav-logo-svg {
-  transform: scale(1.04);
-  opacity: 0.75;
-}
-
-
 /* ==========================================================================
-   4. HERO / PORTADA (CENTRADO REAL SIN DESBORDES)
+   4. HERO / PORTADA (HOME)
    ========================================================================== */
 .home {
-  min-height: 88vh;       /* Mantiene el asomo de la galería abajo */
+  min-height: 88vh;
   width: 100%;
   background-color: #ffffff;
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente en la pantalla */
-  position: relative;      /* Permite anclar el botón de scroll abajo */
-  padding: 0 20px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 100px 20px 40px 20px;
 }
 
-/* Bloque central: yapoanto + Antonia Alvear a la derecha */
 .hero-brand {
   display: inline-flex;
   flex-direction: column;
-  align-items: flex-end;    /* Alinea ambos hijos al borde derecho */
-  width: max-content;       /* Clave: mide estrictamente lo que mide 'yapoanto' */
+  align-items: flex-end;
+  width: max-content;
   max-width: 100%;
   margin: 0 auto;
   text-align: right;
@@ -248,10 +236,10 @@ nav .navbar .logo a:hover .nav-logo-svg {
 }
 
 .brand-title {
-  font-size: clamp(55px, 10vw, 140px);
-  font-weight: 300;
+  font-size: clamp(55px, 10vw, 130px);
+  font-weight: 400;
   color: #111111;
-  line-height: 0.55;
+  line-height: 0.9;
   letter-spacing: -2px;
   margin: 0;
   text-transform: lowercase;
@@ -260,20 +248,19 @@ nav .navbar .logo a:hover .nav-logo-svg {
 }
 
 .brand-sub {
-  font-size: clamp(18px, 2.4vw, 43px);
+  font-size: clamp(18px, 2.4vw, 36px);
   font-weight: 400;
   color: #111111;
   margin-top: 8px;
   letter-spacing: -0.5px;
   display: block;
   text-align: right;
-  align-self: flex-end;     /* Asegura el anclaje a la derecha */
+  align-self: flex-end;
 }
 
-/* Bloque inferior de scroll fijado a la base de la sección */
 .hero-scroll-prompt {
   position: absolute;
-  bottom: 25px;            /* Siempre anclado abajo sin empujar al título */
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -304,7 +291,7 @@ nav .navbar .logo a:hover .nav-logo-svg {
 }
 
 .hero-scroll-prompt .scroll-link:hover {
-  color: var(--color-brand, #ff443a);
+  color: var(--color-brand);
 }
 
 .scroll-arrow {
@@ -346,6 +333,15 @@ nav .navbar .logo a:hover .nav-logo-svg {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
 
+.gallery-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
 .gallery-card img {
   width: 100%;
   height: 100%;
@@ -357,16 +353,6 @@ nav .navbar .logo a:hover .nav-logo-svg {
 .gallery-card:hover img {
   transform: scale(1.03);
 }
-
-.gallery-card-link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  color: inherit;
-  text-decoration: none;
-  position: relative;
-}
-
 
 .card-overlay {
   position: absolute;
@@ -472,88 +458,191 @@ nav .navbar .logo a:hover .nav-logo-svg {
 /* ==========================================================================
    7. SECCIÓN ABOUT ME
    ========================================================================== */
-.about {
-  padding: 120px 0 80px 0;
-  width: 100%;
-  background: #ffffff;
-  min-height: calc(100vh - 70px);
-}
-
-.about .content {
+.about-editorial {
   width: 90%;
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.section-header {
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.section-header h2 {
-  position: relative;
-  display: inline-block;
-  padding-bottom: 10px;
-}
-
-.section-header h2::after {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 3px;
-  background: var(--color-brand);
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
-
-.about-details {
+  padding: 130px 0 100px 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
+  flex-direction: column;
+  gap: 70px;
 }
 
-.about-details .left {
-  flex: 1;
-  max-width: 440px;
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.2fr;
+  gap: 55px;
+  align-items: start;
 }
 
-.about-details .left img {
+.about-portrait-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portrait-wrapper {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 4.8;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: var(--color-surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.portrait-wrapper img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   display: block;
 }
 
-.about-details .right {
-  flex: 1.2;
+.portrait-caption {
+  font-size: 0.8rem;
+  color: #888888;
+  font-style: italic;
+  padding-left: 4px;
 }
 
-.about-details .right h3 {
+.about-bio-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.bio-tagline {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-brand);
+  margin-bottom: 8px;
+}
+
+.about-bio-col h2 {
+  font-size: clamp(2.2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.bio-lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #1a1a1a;
   margin-bottom: 16px;
 }
 
-.button-wrap {
-  margin-top: 28px;
+.about-bio-col p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #4a5568;
 }
 
-.btn-primary {
+.yapoanto-statement-card {
+  background-color: #faf9f6;
+  border-left: 3px solid var(--color-brand);
+  border-radius: 4px 14px 14px 4px;
+  padding: 40px 45px;
+}
+
+.statement-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.statement-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid #e2e2e2;
+  color: #555555;
+}
+
+.statement-header h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+}
+
+.yapoanto-statement-card blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.7;
+  color: #2d3748;
+  margin: 0;
+}
+
+.about-capabilities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #ebebeb;
+}
+
+.capabilities-block h4,
+.cta-contact-block h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #888888;
+  margin-bottom: 18px;
+}
+
+.capability-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.capability-list li {
+  font-size: 0.95rem;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.capability-list li::before {
+  content: '—';
+  color: var(--color-brand);
+  font-weight: 700;
+}
+
+.cta-contact-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 20px;
+}
+
+.btn-about-contact {
   display: inline-block;
-  background: var(--color-brand);
+  background-color: #111111;
   color: #ffffff;
-  padding: 12px 28px;
-  font-size: 15px;
+  padding: 12px 24px;
+  font-size: 0.9rem;
   font-weight: 500;
-  border-radius: 6px;
-  transition: background 0.3s ease, transform 0.2s ease;
+  border-radius: 30px;
+  transition: all 0.25s ease;
+  text-decoration: none;
 }
 
-.btn-primary:hover {
-  background: #e03229;
+.btn-about-contact:hover {
+  background-color: var(--color-brand);
   transform: translateY(-2px);
 }
 
@@ -680,7 +769,153 @@ nav .navbar .logo a:hover .nav-logo-svg {
 }
 
 /* ==========================================================================
-   9. PÁGINA CONTACTO (NOTEBOOK / DESK SCENE)
+   9. PÁGINA PORTFOLIO / WORK (GRILLA CON FILTROS)
+   ========================================================================== */
+.portfolio-view {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 130px 0 100px 0;
+}
+
+.portfolio-intro {
+  margin-bottom: 50px;
+}
+
+.portfolio-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #111111;
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+
+.portfolio-intro p {
+  font-size: 1.05rem;
+  color: #666666;
+  max-width: 620px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid #e0e0e0;
+  padding: 7px 18px;
+  border-radius: 25px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.filter-btn.active {
+  background: #111111;
+  border-color: #111111;
+  color: #ffffff;
+}
+
+.projects-masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 26px;
+}
+
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-tile.tile-wide {
+  grid-column: span 2;
+}
+
+.tile-link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.tile-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #b0b0b0;
+  margin-bottom: 14px;
+}
+
+.tile-wide .tile-media {
+  aspect-ratio: 16 / 9.5;
+}
+
+.tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tile-link:hover .tile-media img {
+  transform: scale(1.03);
+}
+
+.tile-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.caption-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.caption-head h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.tile-link:hover .caption-head h4 {
+  color: var(--color-brand);
+}
+
+.caption-year {
+  font-size: 0.85rem;
+  color: #888888;
+  font-weight: 400;
+}
+
+.caption-tag {
+  font-size: 0.88rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* ==========================================================================
+   10. PÁGINA CONTACTO (NOTEBOOK)
    ========================================================================== */
 #contact-page {
   background-color: #f6f3ed;
@@ -855,211 +1090,24 @@ nav .navbar .logo a:hover .nav-logo-svg {
   color: var(--color-brand);
 }
 
-
 /* ==========================================================================
-   PÁGINA DEDICADA DE PORTAFOLIO (LAYOUT EDITORIAL CON FILTROS)
-   ========================================================================== */
-.portfolio-view {
-  width: 90%;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 130px 0 100px 0;
-}
-
-/* Cabecera & Pestañas de Filtro */
-.portfolio-intro {
-  margin-bottom: 50px;
-}
-
-.portfolio-intro h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: -0.02em;
-  margin-bottom: 10px;
-}
-
-.portfolio-intro p {
-  font-size: 1.05rem;
-  color: #666666;
-  max-width: 620px;
-  margin-bottom: 30px;
-  line-height: 1.6;
-}
-
-.filter-bar {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  background: transparent;
-  border: 1px solid #e0e0e0;
-  padding: 7px 18px;
-  border-radius: 25px;
-  font-family: var(--font-main);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #555555;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.filter-btn:hover {
-  border-color: #111111;
-  color: #111111;
-}
-
-.filter-btn.active {
-  background: #111111;
-  border-color: #111111;
-  color: #ffffff;
-}
-
-/* Grilla con Ritmo Asimétrico */
-.projects-masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px 26px;
-}
-
-.project-tile {
-  display: flex;
-  flex-direction: column;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Pieza destacada que ocupa 2 columnas */
-.project-tile.tile-wide {
-  grid-column: span 2;
-}
-
-/* Enlace contenedor */
-.tile-link {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-}
-
-/* Contenedor de la imagen */
-.tile-media {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: #b0b0b0;
-  margin-bottom: 14px;
-}
-
-.tile-wide .tile-media {
-  aspect-ratio: 16 / 9.5; /* Más panorámica para el elemento ancho */
-}
-
-.tile-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.tile-link:hover .tile-media img {
-  transform: scale(1.03);
-}
-
-/* Textos editoriales debajo de cada imagen */
-.tile-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.caption-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-}
-
-.caption-head h4 {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #111111;
-  margin: 0;
-  transition: color 0.2s ease;
-}
-
-.tile-link:hover .caption-head h4 {
-  color: var(--color-brand, #ff443a);
-}
-
-.caption-year {
-  font-size: 0.85rem;
-  color: #888888;
-  font-weight: 400;
-}
-
-.caption-tag {
-  font-size: 0.88rem;
-  color: #666666;
-  margin: 0;
-}
-
-/* ==========================================================================
-   RESPONSIVE PARA LA GRILLA DE PORTAFOLIO
-   ========================================================================== */
-@media (max-width: 900px) {
-  .projects-masonry-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 28px 20px;
-  }
-
-  .project-tile.tile-wide {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .portfolio-view {
-    padding-top: 100px;
-  }
-
-  .projects-masonry-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .project-tile.tile-wide {
-    grid-column: span 1;
-  }
-
-  .tile-wide .tile-media {
-    aspect-ratio: 4 / 3;
-  }
-}
-
-/* ==========================================================================
-   FOOTER MINIMALISTA & DISCRETO
+   11. FOOTER & BOTÓN SCROLL
    ========================================================================== */
 footer {
-  background: var(--color-bg-light, #ffffff); /* Mismo color del fondo de la web */
-  border-top: 1px solid rgba(0, 0, 0, 0.06);   /* Línea ultrafina casi imperceptible */
+  background: var(--color-bg-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
   padding: 32px 0;
   text-align: center;
   width: 100%;
 }
 
 footer .text span {
-  font-size: 0.8rem;                           /* Tipografía pequeña y refinada */
-  color: #888888;                              /* Gris suave no invasivo */
+  font-size: 0.8rem;
+  color: #888888;
   font-weight: 400;
   letter-spacing: 0.03em;
 }
 
-/* Botón flotante para subir (ahora a tono discreto) */
 .scroll-button a {
   position: fixed;
   bottom: 25px;
@@ -1069,7 +1117,7 @@ footer .text span {
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 8px 12px;
   font-size: 14px;
-  border-radius: 50%;                          /* Circular minimalista */
+  border-radius: 50%;
   display: none;
   z-index: 99;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
@@ -1084,31 +1132,22 @@ footer .text span {
 }
 
 /* ==========================================================================
-   11. MEDIA QUERIES CONSOLIDADAS
+   12. MEDIA QUERIES CONSOLIDADAS
    ========================================================================== */
+@media (max-width: 900px) {
+  .projects-masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+
+  .project-tile.tile-wide {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 860px) {
-  /* About */
-  .about {
-    padding: 100px 0 60px 0;
-  }
-
-  .about-details {
-    flex-direction: column;
-    text-align: center;
-    gap: 36px;
-  }
-
-  .about-details .left {
-    max-width: 320px;
-  }
-
-  .about-details .right p {
-    text-align: left;
-  }
-
-  /* Portfolio Feed */
   .portfolio-feed {
-    padding: 100px 0 60px 0;
+    padding: 110px 0 60px 0;
     gap: 70px;
   }
 
@@ -1130,7 +1169,34 @@ footer .text span {
     aspect-ratio: 16 / 10;
   }
 
-  /* Contact Desk */
+  .about-editorial {
+    padding-top: 110px;
+    gap: 45px;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .portrait-wrapper {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .portrait-caption {
+    text-align: center;
+  }
+
+  .yapoanto-statement-card {
+    padding: 30px 24px;
+  }
+
+  .about-capabilities-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
   .desk-canvas {
     flex-direction: column;
     gap: 20px;
@@ -1148,21 +1214,54 @@ footer .text span {
 }
 
 @media (max-width: 768px) {
-  /* Navegación móvil */
+  /* 1. Navbar móvil */
+  nav {
+    padding: 14px 0;
+  }
+
+  nav .navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  nav .navbar .logo a,
+  .nav-logo-svg {
+    height: 24px;
+    font-size: 22px;
+  }
+
+  .menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    color: #111111;
+    background: transparent;
+    border: none;
+    order: 2;
+    margin-left: auto;
+    padding: 6px;
+  }
+
   nav .navbar .menu {
     position: fixed;
     top: 0;
     left: -100%;
     background: #ffffff;
     height: 100vh;
-    max-width: 320px;
-    width: 100%;
-    padding: 80px 30px;
+    max-width: 300px;
+    width: 80%;
+    padding: 80px 28px;
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
     box-shadow: 10px 0 30px rgba(0, 0, 0, 0.08);
-    transition: left 0.4s ease;
+    transition: left 0.35s ease;
+    z-index: 1000;
   }
 
   .navbar.active .menu {
@@ -1172,29 +1271,68 @@ footer .text span {
   nav .navbar .menu a {
     font-size: 18px;
     color: #111111;
-    padding: 10px 18px;
+    padding: 8px 16px;
+    display: block;
+    width: 100%;
+  }
+
+  .navbar .menu .cancel-btn {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 22px;
+    color: #111111;
+    cursor: pointer;
   }
 
   .navbar .media-icons {
     display: none;
   }
 
-  .menu-btn {
-    display: block;
+  /* 2. Compensación de padding superior para evitar títulos tapados */
+  .home {
+    padding-top: 110px;
+    min-height: 85vh;
   }
 
-  .navbar .menu .cancel-btn {
-    display: block;
-    position: absolute;
-    top: 24px;
-    right: 24px;
-    color: #111111;
+  .portfolio-view {
+    padding-top: 110px;
   }
 
-  /* Galería móvil */
+  .portfolio-intro h2 {
+    font-size: 1.85rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .portfolio-intro p {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .about-editorial {
+    padding-top: 110px;
+  }
+
+  .about-bio-col h2 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .contact-desk {
+    padding-top: 110px;
+    padding-bottom: 50px;
+  }
+
+  .notebook-sheet {
+    padding: 30px 18px 25px 40px;
+  }
+
+  /* 3. Grillas a 1 columna */
   .gallery-container {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 20px;
   }
 
   .card-overlay {
@@ -1208,230 +1346,17 @@ footer .text span {
   }
 }
 
-
-/* ==========================================================================
-   SECCIÓN ABOUT ME (EDITORIAL, MODULAR & BALANCEADO)
-   ========================================================================== */
-.about-editorial {
-  width: 90%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 130px 0 100px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 70px;
-}
-
-/* 1. Grilla Superior (Foto a la izquierda, Bio a la derecha) */
-.about-hero-grid {
-  display: grid;
-  grid-template-columns: 0.9fr 1.2fr;
-  gap: 55px;
-  align-items: start;
-}
-
-.about-portrait-col {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.portrait-wrapper {
-  width: 100%;
-  aspect-ratio: 4 / 4.8;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: var(--color-surface, #f4f4f6);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.portrait-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.portrait-caption {
-  font-size: 0.8rem;
-  color: #888888;
-  font-style: italic;
-  padding-left: 4px;
-}
-
-.about-bio-col {
-  display: flex;
-  flex-direction: column;
-  padding-top: 10px;
-}
-
-.bio-tagline {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--color-brand, #ff443a);
-  margin-bottom: 8px;
-}
-
-.about-bio-col h2 {
-  font-size: clamp(2.2rem, 3.5vw, 3rem);
-  font-weight: 700;
-  color: #111111;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-
-.bio-lead {
-  font-size: 1.15rem;
-  font-weight: 500;
-  line-height: 1.6;
-  color: #1a1a1a;
-  margin-bottom: 16px;
-}
-
-.about-bio-col p {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: #4a5568;
-}
-
-/* 2. Tarjeta Manifiesto (Yapoanto) */
-.yapoanto-statement-card {
-  background-color: #faf9f6; /* Blanco roto cálido editorial */
-  border-left: 3px solid var(--color-brand, #ff443a);
-  border-radius: 4px 14px 14px 4px;
-  padding: 40px 45px;
-}
-
-.statement-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.statement-badge {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  background: #ffffff;
-  padding: 4px 10px;
-  border-radius: 20px;
-  border: 1px solid #e2e2e2;
-  color: #555555;
-}
-
-.statement-header h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #111111;
-  margin: 0;
-}
-
-.yapoanto-statement-card blockquote {
-  font-size: 1.1rem;
-  font-style: italic;
-  line-height: 1.7;
-  color: #2d3748;
-  margin: 0;
-}
-
-/* 3. Bloque Inferior: Capacidades & CTA */
-.about-capabilities-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  padding-top: 20px;
-  border-top: 1px solid #ebebeb;
-}
-
-.capabilities-block h4,
-.cta-contact-block h4 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: #888888;
-  margin-bottom: 18px;
-}
-
-.capability-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.capability-list li {
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.capability-list li::before {
-  content: '—';
-  color: var(--color-brand, #ff443a);
-  font-weight: 700;
-}
-
-.cta-contact-block p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #555555;
-  margin-bottom: 20px;
-}
-
-.btn-about-contact {
-  display: inline-block;
-  background-color: #111111;
-  color: #ffffff;
-  padding: 12px 24px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-radius: 30px;
-  transition: all 0.25s ease;
-  text-decoration: none;
-}
-
-.btn-about-contact:hover {
-  background-color: var(--color-brand, #ff443a);
-  transform: translateY(-2px);
-}
-
-/* ==========================================================================
-   RESPONSIVE PARA ABOUT ME
-   ========================================================================== */
-@media (max-width: 860px) {
-  .about-editorial {
-    padding-top: 100px;
-    gap: 50px;
-  }
-
-  .about-hero-grid {
+@media (max-width: 600px) {
+  .projects-masonry-grid {
     grid-template-columns: 1fr;
-    gap: 35px;
+    gap: 32px;
   }
 
-  .portrait-wrapper {
-    max-width: 360px;
-    margin: 0 auto;
+  .project-tile.tile-wide {
+    grid-column: span 1;
   }
 
-  .portrait-caption {
-    text-align: center;
-  }
-
-  .yapoanto-statement-card {
-    padding: 30px 24px;
-  }
-
-  .about-capabilities-grid {
-    grid-template-columns: 1fr;
-    gap: 35px;
+  .tile-wide .tile-media {
+    aspect-ratio: 4 / 3;
   }
 }
