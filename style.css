@@ -209,11 +209,9 @@ nav .navbar .menu {
   cursor: pointer;
   color: #111111;
 }
-
 /* ==========================================================================
    4. HERO / PORTADA (HOME)
    ========================================================================== */
-
 .home {
   min-height: 90vh;
   width: 100%;
@@ -223,9 +221,8 @@ nav .navbar .menu {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 90px 24px 120px 24px; /* Más aire arriba y abajo */
+  padding: 90px 24px 120px 24px;
 }
-
 
 /* Oculta visualmente el texto duplicado, pero lo conserva para Google (SEO) */
 .hero-brand {
@@ -242,7 +239,6 @@ nav .navbar .menu {
   max-width: 980px;
   margin: 0 auto;
   pointer-events: none;
-  /* Entrada suave al cargar la página */
   animation: smoothFadeIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
@@ -250,17 +246,7 @@ nav .navbar .menu {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 18px; /* Suaviza las esquinas inferiores de las flores */
-  
-  /* Difumina los bordes superior y laterales para que el cielo celeste se funda con el blanco */
-  -webkit-mask-image: 
-    linear-gradient(to bottom, transparent 0%, black 18%, black 96%, transparent 100%),
-    linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image: 
-    linear-gradient(to bottom, transparent 0%, black 18%, black 96%, transparent 100%),
-    linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
-  mask-composite: intersect;
+  border-radius: 16px; /* Bordes nítidos y limpios, sin difuminado */
 }
 
 @keyframes smoothFadeIn {
@@ -297,7 +283,6 @@ nav .navbar .menu {
   align-self: flex-end;
 }
 
-
 .hero-scroll-prompt {
   position: absolute;
   bottom: 28px;
@@ -309,11 +294,9 @@ nav .navbar .menu {
   align-items: center;
   gap: 6px;
   width: 100%;
-  /* Entra un instante después que la ilustración */
   opacity: 0;
   animation: smoothFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
 }
-
 
 .hero-scroll-prompt .role-text {
   font-size: 15px;
@@ -348,8 +331,6 @@ nav .navbar .menu {
   40% { transform: translateY(5px); }
   60% { transform: translateY(2px); }
 }
-
-
 /* ==========================================================================
    5. GALERÍA DE PROYECTOS (HOME)
    ========================================================================== */
