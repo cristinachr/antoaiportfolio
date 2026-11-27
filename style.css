@@ -286,8 +286,9 @@ nav .navbar .menu {
 .hero-scroll-prompt {
   position: absolute;
   bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   text-align: center;
   display: flex;
   flex-direction: column;
