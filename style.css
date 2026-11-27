@@ -213,17 +213,19 @@ nav .navbar .menu {
 /* ==========================================================================
    4. HERO / PORTADA (HOME)
    ========================================================================== */
+
 .home {
-  min-height: 88vh;
+  min-height: 90vh;
   width: 100%;
   background-color: #ffffff;
   display: flex;
-  flex-direction: column;        /* Apila el nombre y la animación en vertical */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 100px 20px 110px 20px; /* Espacio extra abajo para no chocar con el scroll-prompt */
+  padding: 90px 24px 120px 24px; /* Más aire arriba y abajo */
 }
+
 
 /* Oculta visualmente el texto duplicado, pero lo conserva para Google (SEO) */
 .hero-brand {
@@ -295,9 +297,10 @@ nav .navbar .menu {
   align-self: flex-end;
 }
 
+
 .hero-scroll-prompt {
   position: absolute;
-  bottom: 25px;
+  bottom: 28px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -306,7 +309,11 @@ nav .navbar .menu {
   align-items: center;
   gap: 6px;
   width: 100%;
+  /* Entra un instante después que la ilustración */
+  opacity: 0;
+  animation: smoothFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
 }
+
 
 .hero-scroll-prompt .role-text {
   font-size: 15px;
