@@ -218,10 +218,11 @@ nav .navbar .menu {
   width: 100%;
   background-color: #ffffff;
   display: flex;
+  flex-direction: column;        /* Apila el nombre y la animación en vertical */
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 100px 20px 40px 20px;
+  padding: 100px 20px 110px 20px; /* Espacio extra abajo para no chocar con el scroll-prompt */
 }
 
 .hero-brand {
@@ -232,23 +233,22 @@ nav .navbar .menu {
   max-width: 100%;
   margin: 0 auto;
   text-align: right;
-  transform: translateY(-20px);
+  /* Quitamos el translateY(-20px) para que la distribución vertical sea natural */
 }
 
 .hero-animation-wrapper {
   width: 100%;
-  max-width: 320px;      /* Ajusta este valor según qué tan grande quieras el dibujo */
-  margin: 16px auto;
-  pointer-events: none;  /* Evita que interfiera con clics o selección de texto */
+  max-width: 260px;              /* Tamaño equilibrado para no aplastar el texto inferior */
+  margin: 20px auto 0 auto;
+  pointer-events: none;
 }
 
 .hero-doodle {
   width: 100%;
   height: auto;
   display: block;
-  /* Si el MP4 tiene fondo blanco y el fondo de tu web también es blanco, 
-     quita los asteriscos de la línea de abajo para transparentarlo: */
-  /* mix-blend-mode: multiply; */
+  /* Si el MP4 tiene fondo blanco puro, descomenta la siguiente línea para fusionarlo: */
+  mix-blend-mode: multiply;
 }
 
 .brand-title {
