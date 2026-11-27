@@ -235,19 +235,41 @@ nav .navbar .menu {
   white-space: nowrap;
 }
 
-/* Hace que la ilustración animada sea la protagonista */
 .hero-animation-wrapper {
   width: 100%;
-  max-width: 1420px;      /* Gran tamaño editorial */
+  max-width: 980px;
   margin: 0 auto;
   pointer-events: none;
+  /* Entrada suave al cargar la página */
+  animation: smoothFadeIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .hero-doodle {
   width: 100%;
   height: auto;
   display: block;
-  /* Quitamos multiply para que el cielo celeste y el verde no se oscurezcan */
+  border-radius: 18px; /* Suaviza las esquinas inferiores de las flores */
+  
+  /* Difumina los bordes superior y laterales para que el cielo celeste se funda con el blanco */
+  -webkit-mask-image: 
+    linear-gradient(to bottom, transparent 0%, black 18%, black 96%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: 
+    linear-gradient(to bottom, transparent 0%, black 18%, black 96%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-composite: intersect;
+}
+
+@keyframes smoothFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .brand-title {
