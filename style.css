@@ -238,7 +238,7 @@ nav .navbar .menu {
 /* Hace que la ilustración animada sea la protagonista */
 .hero-animation-wrapper {
   width: 100%;
-  max-width: 920px;      /* Gran tamaño editorial */
+  max-width: 1420px;      /* Gran tamaño editorial */
   margin: 0 auto;
   pointer-events: none;
 }
