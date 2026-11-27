@@ -237,16 +237,17 @@ nav .navbar .menu {
 
 .hero-animation-wrapper {
   width: 100%;
-  max-width: 420px; /* Ajusta el tamaño según qué tan protagonista lo quieras */
-  margin: 0 auto 20px;
-  pointer-events: none; /* Evita que interfiera al hacer clic o seleccionar texto */
+  max-width: 320px;      /* Ajusta este valor según qué tan grande quieras el dibujo */
+  margin: 16px auto;
+  pointer-events: none;  /* Evita que interfiera con clics o selección de texto */
 }
 
 .hero-doodle {
   width: 100%;
   height: auto;
   display: block;
-  /* Si el dibujo tiene fondo blanco y tu web también, esto fusiona cualquier borde: */
+  /* Si el MP4 tiene fondo blanco y el fondo de tu web también es blanco, 
+     quita los asteriscos de la línea de abajo para transparentarlo: */
   /* mix-blend-mode: multiply; */
 }
 
