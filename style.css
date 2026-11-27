@@ -225,21 +225,21 @@ nav .navbar .menu {
   padding: 100px 20px 110px 20px; /* Espacio extra abajo para no chocar con el scroll-prompt */
 }
 
+/* Oculta visualmente el texto duplicado, pero lo conserva para Google (SEO) */
 .hero-brand {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: max-content;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: right;
-  /* Quitamos el translateY(-20px) para que la distribución vertical sea natural */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
 
+/* Hace que la ilustración animada sea la protagonista */
 .hero-animation-wrapper {
   width: 100%;
-  max-width: 260px;              /* Tamaño equilibrado para no aplastar el texto inferior */
-  margin: 20px auto 0 auto;
+  max-width: 920px;      /* Gran tamaño editorial */
+  margin: 0 auto;
   pointer-events: none;
 }
 
@@ -247,8 +247,7 @@ nav .navbar .menu {
   width: 100%;
   height: auto;
   display: block;
-  /* Si el MP4 tiene fondo blanco puro, descomenta la siguiente línea para fusionarlo: */
-  mix-blend-mode: multiply;
+  /* Quitamos multiply para que el cielo celeste y el verde no se oscurezcan */
 }
 
 .brand-title {
